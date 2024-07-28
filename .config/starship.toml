@@ -1,0 +1,74 @@
+format = """
+[](#c6a0f6)\
+$username[@](bg:#c6a0f6 fg:#181926)$hostname\
+[](bg:#f5bde6 fg:#c6a0f6)\
+$directory\
+[](bg:green fg:#f5bde6)\
+$git_branch\
+$git_status\
+[](bg:blue fg:green)\
+$dotnet\
+$java\
+$kotlin\
+$gradle\
+$python\
+$rust\
+[ ](bg:none fg:blue)
+"""
+
+[username]
+show_always = true
+style_user = "bg:#c6a0f6 fg:#181926"
+style_root = "bg:#c6a0f6 fg:#181926"
+format = '[$user]($style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "bg:#c6a0f6 fg:#181926"
+format = '[$hostname]($style)'
+disabled = false
+
+[git_branch]
+style = "bg:green fg:#181926"
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+
+[git_status]
+style = "bg:green fg:#181926"
+
+[directory]
+style = "bg:#f5bde6 fg:#181926"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[dotnet]
+symbol = ""
+style = "bg:blue fg:#181926"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:blue fg:#181926"
+format = '[ $symbol ($version) ]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:blue fg:#181926"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+symbol = ""
+style = "bg:blue fg:#181926"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:blue fg:#181926"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:blue fg:#181926"
+format = '[ $symbol ($version) ]($style)'
+
