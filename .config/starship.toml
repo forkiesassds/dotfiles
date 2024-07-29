@@ -43,7 +43,7 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [dotnet]
-symbol = ""
+symbol = " "
 style = "bg:blue fg:#181926"
 format = '[ $symbol ($version) ]($style)'
 
@@ -53,22 +53,22 @@ style = "bg:blue fg:#181926"
 format = '[ $symbol ($version) ]($style)'
 
 [kotlin]
-symbol = ""
+symbol = " "
 style = "bg:blue fg:#181926"
 format = '[ $symbol ($version) ]($style)'
 
 [gradle]
-symbol = ""
+symbol = " "
 style = "bg:blue fg:#181926"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
-symbol = ""
+symbol = " "
 style = "bg:blue fg:#181926"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
-symbol = ""
+symbol = " "
 style = "bg:blue fg:#181926"
 format = '[ $symbol ($version) ]($style)'
 
