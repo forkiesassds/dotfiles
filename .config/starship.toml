@@ -16,6 +16,16 @@ $rust\
 [ ](bg:none fg:blue)
 """
 
+right_format = """
+$status
+"""
+
+[status]
+style = "bg:#c6a0f6 fg:#181926"
+#ugly workaround to make it so i don't have to see an empty part of the prompt
+format = '[](#c6a0f6)[$symbol$status]($style)[ ](#c6a0f6)'
+disabled = false
+
 [username]
 show_always = true
 style_user = "bg:#c6a0f6 fg:#181926"
