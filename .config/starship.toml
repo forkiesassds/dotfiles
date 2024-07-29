@@ -45,6 +45,7 @@ format = '[ $symbol$branch(:$remote_branch) ]($style)'
 
 [git_status]
 style = "bg:green fg:#181926"
+format = '([\[$all_status$ahead_behind\] ]($style))'
 
 [directory]
 style = "bg:#f5bde6 fg:#181926"
