@@ -1,0 +1,144 @@
+@import url('https://refact0r.github.io/system24/src/main.css'); /* system24 base css */
+
+:root {
+    /* 
+    i use this very bizzare and esoteric combo of non-monospace font with this theme... which was designed for monospace fonts in the first place
+    and due to that i have to manually override the --font-code variable to actually make it use a monospace font again
+    also yes, it's not terminus because it looks ugly when not set to a specific font size, which happens a lot on discord 
+    */
+    --font-code: 'Fira Code', 'gg mono', monospace;
+
+    --font: 'Inter'; /* UI font name. it must be installed on your system. */
+    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
+    font-weight: 400; /* UI font weight. */
+    --label-font-weight: 500; /* font weight for panel labels. */
+    --corner-text: 'discord'; /* custom text to display in the corner. only works on windows. */
+    --pad: 8px; /* padding between panels. */
+    --txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
+    --panel-roundness: 10px; /* corner roundness of panels. */
+
+    /* background colors */
+    --bg-0: hsl(232deg, 23%, 18%); /* main background color. */
+    --bg-1: hsl(233deg, 23%, 15%); /* background color for secondary elements like code blocks, embeds, etc. */
+    --bg-2: hsl(230deg, 19%, 26%); /* color of neutral buttons. */
+    --bg-3: hsl(230deg, 14%, 41%); /* color of neutral buttons when hovered. */
+
+    /* state modifiers */
+    --hover: color-mix(in oklch, var(--txt-3), transparent 80%); /* color of hovered elements. */
+    --active: color-mix(in oklch, var(--txt-3), transparent 60%); /* color of elements when clicked. */
+    --selected: var(--active); /* color of selected elements. */
+
+    /* text colors */
+    --txt-dark: var(--bg-0); /* color of dark text on colored backgrounds. */
+    --txt-link: var(--cyan); /* color of links. */
+    --txt-0: hsl(227deg, 60%, 97%); /* color of bright/white text. */
+    --txt-1: hsl(227deg, 68%, 88%); /* main text color. */
+    --txt-2: hsl(228deg, 39%, 80%); /* color of secondary text like channel list. */
+    --txt-3: hsl(227deg, 27%, 72%); /* color of muted text. */
+
+    /* accent colors */
+    --acc-0: var(--purple); /* main accent color. */
+    --acc-1: var(--purple-1); /* color of accent buttons when hovered. */
+    --acc-2: var(--purple-2); /* color of accent buttons when clicked. */
+
+    /* borders */
+    --border-width: 2px; /* panel border thickness. */
+    --border-color: var(--bg-3); /* panel border color. */
+    --border-hover-color: var(--acc-0); /* panel border color when hovered. */
+    --border-transition: 0.2s ease; /* panel border transition. */
+
+    /* status dot colors */
+    --online-dot: var(--green); /* color of online dot. */
+    --dnd-dot: var(--pink); /* color of do not disturb dot. */
+    --idle-dot: var(--yellow); /* color of idle dot. */
+    --streaming-dot: var(--purple); /* color of streaming dot. */
+
+    /* mention/ping and message colors */
+    --mention-txt: var(--acc-0); /* color of mention text. */
+    --mention-bg: color-mix(in oklch, var(--acc-0), transparent 90%); /* background highlight of mention text. */
+    --mention-overlay: color-mix(in oklch, var(--acc-0), transparent 90%); /* overlay color of messages that mention you. */
+    --mention-hover-overlay: color-mix(in oklch, var(--acc-0), transparent 95%); /* overlay color of messages that mention you when hovered. */
+    --reply-overlay: var(--active); /* overlay color of message you are replying to. */
+    --reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
+
+    /* color shades */
+    --pink: hsl(316deg, 74%, 85%);
+    --pink-1: color-mix(in oklch, var(--pink), white 80%);
+    --pink-2: color-mix(in oklch, var(--pink), white 60%);
+    --purple: hsl(267deg, 83%, 80%);
+    --purple-1: color-mix(in oklch, var(--purple), white 80%);
+    --purple-2: color-mix(in oklch, var(--purple), white 60%);
+    --cyan: hsl(189deg, 59%, 73%);
+    --yellow: hsl(40deg, 70%, 78%);
+    --green: hsl(105deg, 48%, 72%);
+    --green-1: color-mix(in oklch, var(--green), white 80%);
+    --green-2: color-mix(in oklch, var(--green), white 60%);
+}
+
+/* add scrollbar to server list */
+[class*=none]::-webkit-scrollbar {
+    width: 0.25em;
+    background: transparent;
+    border: none;
+}
+
+[class*=none]::-webkit-scrollbar-thumb {
+    background: var(--acc-0);
+}
+
+/* hide annoying suggestion telling me to create a thread */
+[class*=threadSuggestionBar] {
+    display:none;
+}
+
+/* probably old fix to make it so profile descriptions don't get cut off */
+[style="-webkit-line-clamp: 6;"] {
+    -webkit-line-clamp: 10000000 !important;
+}
+
+/* nitpick: app -> bot, all uppercase */
+span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix]) > span[class^=botText],
+span[class^=headerBotTag]:not(span[class*=botTagAI]) > span[class^=botText] {
+    display: none !important;
+}
+
+span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])::after,
+span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
+    content: "BOT";
+}
+
+/* nitpick: move gif icon and favourate button back to the right */
+[class^=imageAccessory] {
+    left: unset;
+    right: 6px;
+}
+
+/* hide annoying/useless stuff */
+[class^=channelAppLauncher], [aria-label="Send a gift"], [class*=stormContainer] { display: none; }
+
+/* nitpick: remove weird padding towards the right of the top and bottom bars */
+[class^=newTopicsBarContainer], [class^=newMessagesBar], [class^=jumpToPresentBar], [class^=topicsPillContainer] { right: 16px; }
+
+/* theme fixes */
+[class*=unreadBar], /* unred messages bar */
+[class^=bottomControls], /* pip bottom text */
+[class^=headerText][style="color: var(--white-500);"], /* pip title text */
+:not([class*=tooltipGreen]) > [class^=tooltipContent], /* tooltips for some things (poor video quality, nitro quality stream) */
+[class^="text-md/semibold"][class*=header], /* all participents have video hidden screen */
+[class^=contents][class*=button], /* some buttons like "show all participents" */
+[class^=status], /* camera/stream video buttons */
+:not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
+[class^=rowIcon] { /* bot data info icons */
+    color: var(--txt-1) !important; 
+}
+[class*=qualityIndicatorLowQuality], /* stream low quality indicator */
+[class*="red"] > div > [class*=controlIcon] { /* stop watching/leave call button */
+    color: var(--txt-dark) !important; /* this has to be important else the icon doesn't become black */
+}
+[class^=liveQualityIndicator][style="background-color: var(--primary-500);"] { /* nitro quality stream indicator */
+    background-color: var(--acc-0) !important;
+    color: var(--txt-dark) !important;
+}
+:not([class^=botTag]) > svg > path[fill="var(--white)"] { /* svg paths that use var(--white) */
+    fill: var(--txt-0);
+}
