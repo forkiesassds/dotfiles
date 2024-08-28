@@ -132,7 +132,8 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
     color: var(--txt-1) !important; 
 }
 [class*=qualityIndicatorLowQuality], /* stream low quality indicator */
-[class*="red"] > div > [class*=controlIcon] { /* stop watching/leave call button */
+[class*="red"] > div > [class*=controlIcon], /* stop watching/leave call button */
+[class^=clipPill] > div { /* clip indicator text */
     color: var(--txt-dark) !important; /* this has to be important else the icon doesn't become black */
 }
 [class^=liveQualityIndicator][style="background-color: var(--primary-500);"] { /* nitro quality stream indicator */
