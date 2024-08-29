@@ -148,11 +148,6 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
     fill: var(--txt-0);
 }
 
-/* fix certain titles being cut off */
-[class^=callContainer] { /* call/stream ui */
-	overflow: visible;
-}
-
 /* fix statuses not using proper colors */
 rect[fill="#23a55a"], svg[fill="#23a55a"] { fill: var(--online-dot) !important; } /* online */
 rect[fill="#f0b232"], svg[fill="#f0b232"] { fill: var(--idle-dot) !important; } /* away */
