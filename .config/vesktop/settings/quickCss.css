@@ -128,6 +128,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 [class^="text-md/semibold"][class*=header], /* all participents have video hidden screen */
 [class^=contents][class*=button], /* some buttons like "show all participents" */
 :not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
+[class^=wrapperAudio], /* audio duration text */
 [class^=rowIcon] { /* bot data info icons */
     color: var(--txt-1) !important; 
 }
