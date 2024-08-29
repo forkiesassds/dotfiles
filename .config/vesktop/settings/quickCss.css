@@ -129,12 +129,14 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 [class^=contents][class*=button], /* some buttons like "show all participents" */
 :not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
 [class^=wrapperAudio], /* audio duration text */
+[class*=interactive] > svg, /* stream icons (mute, more) */
 [class^=rowIcon] { /* bot data info icons */
     color: var(--txt-1) !important; 
 }
 [class*=qualityIndicatorLowQuality], /* stream low quality indicator */
 [class*="red"] > div > [class*=controlIcon], /* stop watching/leave call button */
 [class*="green"] > div > [class*=controlIcon], /* join (video) call buttom */
+[class*=botTagOP], /* fourm thread op tag */
 [class^=clipPill] > div { /* clip indicator text */
     color: var(--txt-dark) !important; /* this has to be important else the icon doesn't become black */
 }
