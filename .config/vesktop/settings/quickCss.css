@@ -51,6 +51,7 @@
     --online-dot: var(--green); /* color of online dot. */
     --dnd-dot: var(--pink); /* color of do not disturb dot. */
     --idle-dot: var(--yellow); /* color of idle dot. */
+    --offline-dot: var(--bg-3);
     --streaming-dot: var(--purple); /* color of streaming dot. */
 
     /* mention/ping and message colors */
@@ -107,7 +108,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
     content: "BOT";
 }
 
-/* nitpick: move gif icon and favourate button back to the right */
+/* nitpick: move gif icon and favourite button back to the right */
 [class^=imageAccessory] {
     left: unset;
     right: 6px;
@@ -123,23 +124,40 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 [class*=unreadBar], /* unred messages bar */
 [class^=bottomControls], /* pip bottom text */
 [class^=headerText][style="color: var(--white-500);"], /* pip title text */
-:not([class*=tooltipGreen]) > [class^=tooltipContent], /* tooltips for some things (poor video quality, nitro quality stream) */
+:not([class*=tooltipGreen]) > [class^=tooltipContent], /* tooltips for some things (poor video quality, stream quality) */
 [class^="text-md/semibold"][class*=header], /* all participents have video hidden screen */
 [class^=contents][class*=button], /* some buttons like "show all participents" */
-[class^=status], /* camera/stream video buttons */
 :not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
 [class^=rowIcon] { /* bot data info icons */
     color: var(--txt-1) !important; 
 }
 [class*=qualityIndicatorLowQuality], /* stream low quality indicator */
 [class*="red"] > div > [class*=controlIcon], /* stop watching/leave call button */
+[class*="green"] > div > [class*=controlIcon], /* join (video) call buttom */
 [class^=clipPill] > div { /* clip indicator text */
     color: var(--txt-dark) !important; /* this has to be important else the icon doesn't become black */
 }
-[class^=liveQualityIndicator][style="background-color: var(--primary-500);"] { /* nitro quality stream indicator */
+[class^=liveQualityIndicator][style="background-color: var(--primary-500);"] { /* stream quality indicator */
     background-color: var(--acc-0) !important;
     color: var(--txt-dark) !important;
 }
 :not([class^=botTag]) > svg > path[fill="var(--white)"] { /* svg paths that use var(--white) */
     fill: var(--txt-0);
 }
+
+/* fix certain titles being cut off */
+[class^=callContainer] { /* call/stream ui */
+	overflow: visible;
+}
+
+/* fix statuses not using proper colors */
+rect[fill="#23a55a"], svg[fill="#23a55a"] { fill: var(--online-dot) !important; } /* online */
+rect[fill="#f0b232"], svg[fill="#f0b232"] { fill: var(--idle-dot) !important; } /* away */
+rect[fill="#f23f43"], svg[fill="#f23f43"] { fill: var(--dnd-dot) !important; } /* dnd */
+rect[fill="#80848e"], svg[fill="#80848e"] { fill: var(--offline-dot) !important; } /* offline */
+rect[fill="#593695"], svg[fill="#593695"] { fill: var(--streaming-dot) !important; } /* streaming */
+
+[class^=status][style="background-color: rgb(35, 165, 90);"] { background-color: var(--online-dot) !important; } /* online */
+[class^=status][style="background-color: rgb(240, 178, 50);"] { background-color: var(--idle-dot) !important; } /* away */
+[class^=status][style="background-color: rgb(242, 63, 67);"] { background-color: var(--dnd-dot) !important; } /* dnd */
+[class^=status][style="background-color: rgb(128, 132, 142);"] { background-color: var(--offline-dot) !important; } /* offline */
