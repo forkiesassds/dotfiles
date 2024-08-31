@@ -51,7 +51,7 @@
     --online-dot: var(--green); /* color of online dot. */
     --dnd-dot: var(--pink); /* color of do not disturb dot. */
     --idle-dot: var(--yellow); /* color of idle dot. */
-    --offline-dot: var(--bg-3);
+    --offline-dot: var(--bg-3); /* color of the offline dot */
     --streaming-dot: var(--purple); /* color of streaming dot. */
 
     /* mention/ping and message colors */
@@ -146,6 +146,11 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 :not([class^=botTag]) > svg > path[fill="var(--white)"] { /* svg paths that use var(--white) */
     fill: var(--txt-0);
+}
+
+/* make call box have rounded corners */
+[class^=chat] > [class^=wrapper] {
+    border-radius: var(--panel-roundness);
 }
 
 /* fix statuses not using proper colors */
