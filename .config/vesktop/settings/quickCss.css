@@ -137,6 +137,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 [class*="red"] > div > [class*=controlIcon], /* stop watching/leave call button */
 [class*="green"] > div > [class*=controlIcon], /* join (video) call buttom */
 [class*=botTagOP], /* fourm thread op tag */
+[aria-label="Add Friend"][class*=colorBrand] > div, /* add friend button */
 [class^=clipPill] > div { /* clip indicator text */
     color: var(--txt-dark) !important; /* this has to be important else the icon doesn't become black */
 }
@@ -146,6 +147,10 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 :not([class^=botTag]) > svg > path[fill="var(--white)"] { /* svg paths that use var(--white) */
     fill: var(--txt-0);
+}
+
+path[fill="var(--interactive-normal)"] { /* svg paths that use var(--interactive-normal) */
+    fill: var(--txt-dark);
 }
 
 /* make call box have rounded corners */
