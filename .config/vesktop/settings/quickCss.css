@@ -149,7 +149,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
     fill: var(--txt-0);
 }
 
-path[fill="var(--interactive-normal)"] { /* svg paths that use var(--interactive-normal) */
+svg[class^=status] > path[fill="var(--interactive-normal)"] { /* voice call deafened and muted icons */
     fill: var(--txt-dark);
 }
 
