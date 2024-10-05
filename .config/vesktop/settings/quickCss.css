@@ -104,8 +104,13 @@ span[class^=headerBotTag]:not(span[class*=botTagAI]) > span[class^=botText] {
 }
 
 span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])::after,
-span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
+span[class^=headerBotTag]:not(span[class*=botTagAI])::after, nav[class^=wrapper] > * > [class^=footer] {
     content: "BOT";
+}
+
+/* move back bottom ping pill before stupid ass discover page */
+[class^=unreadMentionsIndicatorBottom] {
+    bottom: 0;
 }
 
 /* nitpick: move gif icon and favourite button back to the right */
@@ -115,7 +120,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 
 /* hide annoying/useless stuff */
-[class^=channelAppLauncher], [aria-label="Send a gift"], [class*=container]:has(> [class^=artContainer]) { display: none; }
+[class^=channelAppLauncher], [aria-label="Send a gift"], [class*=container]:has(> [class^=artContainer]), [role=tree] > [class^=footer] { display: none; }
 
 /* nitpick: remove weird padding towards the right of the top and bottom bars */
 [class^=newTopicsBarContainer], [class^=newMessagesBar], [class^=jumpToPresentBar], [class^=topicsPillContainer] { right: 16px; }
