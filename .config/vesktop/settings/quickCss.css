@@ -125,6 +125,9 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 /* nitpick: remove weird padding towards the right of the top and bottom bars */
 [class^=newTopicsBarContainer], [class^=newMessagesBar], [class^=jumpToPresentBar], [class^=topicsPillContainer] { right: 16px; }
 
+/* fix duplicated pronouns display with pronoundb plugin */
+.vc-pronoundb-compact { display: none !important; }
+
 /* theme fixes */
 [class*=unreadBar], /* unred messages bar */
 [class^=bottomControls], /* pip bottom text */
