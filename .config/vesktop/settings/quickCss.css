@@ -138,7 +138,8 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 :not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
 [class^=wrapperAudio], /* audio duration text */
 [class*=interactive] > svg, /* stream icons (mute, more) */
-[class^=rowIcon] { /* bot data info icons */
+[class^=rowIcon], /* bot data info icons */
+[class^=videoControls] > * > svg, [class^=volumeButton] > * > svg { /* video player buttons */
     color: var(--txt-1) !important; 
 }
 [class*=qualityIndicatorLowQuality], /* stream low quality indicator */
