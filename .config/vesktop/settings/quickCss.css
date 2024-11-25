@@ -184,3 +184,10 @@ div[class^=textArea] > div > * {
     min-height: calc(var(--custom-channel-textarea-text-area-height) - 36px);
     padding: 18px 0;
 }
+
+/* remove nonsense "cool ass" ascii art font */
+h3[data-text-variant='heading-xxl/extrabold'] {
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 500;
+}
