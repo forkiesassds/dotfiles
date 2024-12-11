@@ -115,7 +115,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 
 /* hide annoying/useless stuff */
-[class^=channelAppLauncher], [aria-label="Send a gift"], [class*=container]:has(> [class^=artContainer]), [role=tree] > * > [class^=footer], [aria-label="Direct Messages"] > div[class^=container] { display: none; }
+[class^=channelAppLauncher], [aria-label="Send a gift"], [class*=container]:has(> [class^=artContainer]), [role=tree] > * > [class^=footer] { display: none; }
 
 /* move back bottom ping pill before stupid ass discover page */
 [class^=unreadMentionsIndicatorBottom] {
