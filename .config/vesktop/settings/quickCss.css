@@ -137,7 +137,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 [class^=contents][class*=button], /* some buttons like "show all participents" */
 :not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
 [class^=wrapperAudio], /* audio duration text */
-[class*=interactive] > svg, /* stream icons (mute, more) */
+:not([class*=disconnect]) > * > [class*=controlIconColor] > svg, /* stream icons (mute, more) */
 [class^=rowIcon], /* bot data info icons */
 [class^=videoControls] > * > svg, [class^=volumeButton] > * > svg { /* video player buttons */
     color: var(--txt-1) !important; 
@@ -154,6 +154,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
     background-color: var(--acc-0) !important;
     color: var(--txt-dark) !important;
 }
+
 :not([class^=botTag]) > svg > path[fill="var(--white)"] { /* svg paths that use var(--white) */
     fill: var(--txt-0);
 }
