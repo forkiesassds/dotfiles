@@ -1,79 +1,10 @@
-@import url('https://refact0r.github.io/system24/src/main.css'); /* system24 base css */
-
 :root {
-    /* 
-    i use this very bizzare and esoteric combo of non-monospace font with this theme... which was designed for monospace fonts in the first place
-    and due to that i have to manually override the --font-code variable to actually make it use a monospace font again
-    also yes, it's not terminus because it looks ugly when not set to a specific font size, which happens a lot on discord 
-    */
-    --font-code: 'Fira Code', 'gg mono', monospace;
+    --font-primary: "Inter","gg sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --font-display: "Inter","gg sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --font-code: "Fira Code","gg mono","Source Code Pro",Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
 
-    --font: 'Inter'; /* UI font name. it must be installed on your system. */
-    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
-    font-weight: 400; /* UI font weight. */
-    --label-font-weight: 500; /* font weight for panel labels. */
-    --corner-text: 'discord'; /* custom text to display in the corner. only works on windows. */
-    --pad: 8px; /* padding between panels. */
-    --txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
-    --panel-roundness: 10px; /* corner roundness of panels. */
-
-    /* background colors */
-    --bg-0: hsl(232deg, 23%, 18%); /* main background color. */
-    --bg-1: hsl(233deg, 23%, 15%); /* background color for secondary elements like code blocks, embeds, etc. */
-    --bg-2: hsl(230deg, 19%, 26%); /* color of neutral buttons. */
-    --bg-3: hsl(230deg, 14%, 41%); /* color of neutral buttons when hovered. */
-
-    /* state modifiers */
-    --hover: color-mix(in oklch, var(--txt-3), transparent 80%); /* color of hovered elements. */
-    --active: color-mix(in oklch, var(--txt-3), transparent 60%); /* color of elements when clicked. */
-    --selected: var(--active); /* color of selected elements. */
-
-    /* text colors */
-    --txt-dark: var(--bg-0); /* color of dark text on colored backgrounds. */
-    --txt-link: var(--cyan); /* color of links. */
-    --txt-0: hsl(227deg, 60%, 97%); /* color of bright/white text. */
-    --txt-1: hsl(227deg, 68%, 88%); /* main text color. */
-    --txt-2: hsl(228deg, 39%, 80%); /* color of secondary text like channel list. */
-    --txt-3: hsl(227deg, 27%, 72%); /* color of muted text. */
-
-    /* accent colors */
-    --acc-0: var(--purple); /* main accent color. */
-    --acc-1: var(--purple-1); /* color of accent buttons when hovered. */
-    --acc-2: var(--purple-2); /* color of accent buttons when clicked. */
-
-    /* borders */
-    --border-width: 2px; /* panel border thickness. */
-    --border-color: var(--bg-3); /* panel border color. */
-    --border-hover-color: var(--acc-0); /* panel border color when hovered. */
-    --border-transition: 0.2s ease; /* panel border transition. */
-
-    /* status dot colors */
-    --online-dot: var(--green); /* color of online dot. */
-    --dnd-dot: var(--pink); /* color of do not disturb dot. */
-    --idle-dot: var(--yellow); /* color of idle dot. */
-    --offline-dot: var(--bg-3); /* color of the offline dot */
-    --streaming-dot: var(--purple); /* color of streaming dot. */
-
-    /* mention/ping and message colors */
-    --mention-txt: var(--acc-0); /* color of mention text. */
-    --mention-bg: color-mix(in oklch, var(--acc-0), transparent 90%); /* background highlight of mention text. */
-    --mention-overlay: color-mix(in oklch, var(--acc-0), transparent 90%); /* overlay color of messages that mention you. */
-    --mention-hover-overlay: color-mix(in oklch, var(--acc-0), transparent 95%); /* overlay color of messages that mention you when hovered. */
-    --reply-overlay: var(--active); /* overlay color of message you are replying to. */
-    --reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
-
-    /* color shades */
-    --pink: hsl(316deg, 74%, 85%);
-    --pink-1: color-mix(in oklch, var(--pink), white 80%);
-    --pink-2: color-mix(in oklch, var(--pink), white 60%);
-    --purple: hsl(267deg, 83%, 80%);
-    --purple-1: color-mix(in oklch, var(--purple), white 80%);
-    --purple-2: color-mix(in oklch, var(--purple), white 60%);
-    --cyan: hsl(189deg, 59%, 73%);
-    --yellow: hsl(40deg, 70%, 78%);
-    --green: hsl(105deg, 48%, 72%);
-    --green-1: color-mix(in oklch, var(--green), white 80%);
-    --green-2: color-mix(in oklch, var(--green), white 60%);
+    letter-spacing: -0.05ch;
+    font-weight: 400;
 }
 
 /* add scrollbar to server list */
@@ -84,12 +15,12 @@
 }
 
 [class*=none]::-webkit-scrollbar-thumb {
-    background: var(--acc-0);
+    background: var(--scrollbar-auto-thumb);
 }
 
 /* hide annoying suggestion telling me to create a thread */
 [class*=threadSuggestionBar] {
-    display:none;
+    display: none;
 }
 
 /* probably old fix to make it so profile descriptions don't get cut off */
@@ -98,8 +29,8 @@
 }
 
 /* nitpick: app -> bot, all uppercase */
-span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix]) > span[class^=botText],
-span[class^=headerBotTag]:not(span[class*=botTagAI]) > span[class^=botText] {
+span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])>span[class^=botText],
+span[class^=headerBotTag]:not(span[class*=botTagAI])>span[class^=botText] {
     display: none !important;
 }
 
@@ -115,80 +46,70 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 
 /* hide annoying/useless stuff */
-[class^=channelAppLauncher], [aria-label="Send a gift"], [class*=container]:has(> [class^=artContainer]), [role=tree] > * > [class^=footer] { display: none; }
-
-/* move back bottom ping pill before stupid ass discover page */
-[class^=unreadMentionsIndicatorBottom] {
-    bottom: 0;
+[aria-label="Send a gift"],
+[class*=container]:has(> [class^=artContainer]),
+[role=tree]>*>[class^=footer] {
+    display: none;
 }
-
-/* nitpick: remove weird padding towards the right of the top and bottom bars */
-[class^=newTopicsBarContainer], [class^=newMessagesBar], [class^=jumpToPresentBar], [class^=topicsPillContainer] { right: 16px; }
 
 /* fix duplicated pronouns display with pronoundb plugin */
-.vc-pronoundb-compact { display: none !important; }
-
-/* theme fixes */
-[class*=unreadBar], /* unred messages bar */
-[class^=bottomControls], /* pip bottom text */
-[class^=headerText][style="color: var(--white-500);"], /* pip title text */
-:not([class*=tooltipGreen]) > [class^=tooltipContent], /* tooltips for some things (poor video quality, stream quality) */
-[class^="text-md/semibold"][class*=header], /* all participents have video hidden screen */
-[class^=contents][class*=button], /* some buttons like "show all participents" */
-:not([class*="red"])[class^=contextMenuNub], /* menu nubs in voice channel/call */
-[class^=wrapperAudio], /* audio duration text */
-:not([class*=disconnect]) > * > [class*=controlIconColor] > svg, /* stream icons (mute, more) */
-[class^=rowIcon], /* bot data info icons */
-[class^=videoControls] > * > svg, [class^=volumeButton] > * > svg { /* video player buttons */
-    color: var(--txt-1) !important; 
-}
-[class*=qualityIndicatorLowQuality], /* stream low quality indicator */
-[class*="red"] > div > [class*=controlIcon], /* stop watching/leave call button */
-[class*="green"] > div > [class*=controlIcon], /* join (video) call buttom */
-[class*=botTagOP], /* fourm thread op tag */
-[aria-label="Add Friend"][class*=colorBrand] > div, /* add friend button */
-[class^=clipPill] > div { /* clip indicator text */
-    color: var(--txt-dark) !important; /* this has to be important else the icon doesn't become black */
-}
-[class^=liveQualityIndicator][style="background-color: var(--primary-500);"] { /* stream quality indicator */
-    background-color: var(--acc-0) !important;
-    color: var(--txt-dark) !important;
+.vc-pronoundb-compact {
+    display: none !important;
 }
 
-:not([class^=botTag]) > svg > path[fill="var(--white)"] { /* svg paths that use var(--white) */
-    fill: var(--txt-0);
+[class^=searchResultsWrap_] [class^=container_]:has([class^=pageControlContainer_]){
+    position: sticky;
+    bottom: 0px;
+    z-index: 999;
+    background: var(--bg-overlay-1, var(--background-secondary));
 }
 
-svg[class^=status] > path[fill="var(--interactive-normal)"] { /* voice call deafened and muted icons */
-    fill: var(--txt-dark);
-}
+.visual-refresh {
+    div[class^="subtitleContainer_"],
+    main[class^="container__"] section[class*="container__"] {
+        position-anchor: --vr-header-trailing;
+        width: calc(100% - 88px);
+    }
 
-/* make call box have rounded corners */
-[class^=chat] > [class^=wrapper] {
-    border-radius: var(--panel-roundness);
-}
+    div[class^="page_"] {
+        &:not(:has(> div[class^="chat_"])) {
+            anchor-name: --vr-header-snippet;
+        }
 
-/* fix statuses not using proper colors */
-rect[fill="#23a55a"], svg[fill="#23a55a"] { fill: var(--online-dot) !important; } /* online */
-rect[fill="#f0b232"], svg[fill="#f0b232"] { fill: var(--idle-dot) !important; } /* away */
-rect[fill="#f23f43"], svg[fill="#f23f43"] { fill: var(--dnd-dot) !important; } /* dnd */
-rect[fill="#80848e"], svg[fill="#80848e"] { fill: var(--offline-dot) !important; } /* offline */
-rect[fill="#593695"], svg[fill="#593695"] { fill: var(--streaming-dot) !important; } /* streaming */
+        &>div[class^="chat_"] {
+            anchor-name: --vr-header-snippet;
+        }
+    }
 
-[class^=status][style="background-color: rgb(35, 165, 90);"] { background-color: var(--online-dot) !important; } /* online */
-[class^=status][style="background-color: rgb(240, 178, 50);"] { background-color: var(--idle-dot) !important; } /* away */
-[class^=status][style="background-color: rgb(242, 63, 67);"] { background-color: var(--dnd-dot) !important; } /* dnd */
-[class^=status][style="background-color: rgb(128, 132, 142);"] { background-color: var(--offline-dot) !important; } /* offline */
+    div[class^="base_"] {
+        grid-template-rows: auto;
 
-/* fix weirdly misaligned text in input boxes */
-div[class^=textArea] > div > * {
-    min-height: calc(var(--custom-channel-textarea-text-area-height) - 36px);
-    padding: 18px 0;
-}
+        &>div[class^="bar_"] {
+            position: absolute;
+            position-anchor: --vr-header-snippet;
+            top: 0;
+            right: anchor(right);
+            width: anchor-size(width);
+            padding: 0;
+        }
 
-/* remove nonsense "cool ass" ascii art font */
-h3[data-text-variant='heading-xxl/extrabold'] {
-    font-family: inherit;
-    font-size: 32px;
-    font-weight: 500;
+        & div[class^="trailing_"] {
+            anchor-name: --vr-header-trailing;
+            background-color: var(--background-base-lower);
+            border: none;
+            border-bottom: 1px solid var(--border-subtle);
+            border-top: 1px solid var(--border-subtle);
+            height: calc(var(--custom-channel-header-height) - 1px);
+            padding-right: 8px;
+            padding-left: 4px;
+        }
+    }
+
+    :not(:has(div[class^="page_"] > div[class^="chat_"])) div[class^="base_"]>div[class^="bar_"] {
+        right: 0 !important;
+    }
+
+    ul[data-list-id="guildsnav"]>div[class^="itemsContainer_"] {
+        margin-top: 16px;
+    }
 }
