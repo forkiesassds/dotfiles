@@ -65,7 +65,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 
 .visual-refresh {
-    div[class^="subtitleContainer_"],
+    div[class^="subtitleContainer_"]:not(:has([class*=transparent])),
     main[class^="container__"] section[class*="container__"] {
         position-anchor: --vr-header-trailing;
         width: calc(100% - 88px);
