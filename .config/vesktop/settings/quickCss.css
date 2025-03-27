@@ -113,3 +113,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
         margin-top: 16px;
     }
 }
+
+div[aria-label="Update Ready!"] {
+    display: none !important;
+}
