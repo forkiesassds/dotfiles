@@ -29,26 +29,26 @@
 }
 
 /* nitpick: app -> bot, all uppercase */
-span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])>span[class^=botText],
-span[class^=headerBotTag]:not(span[class*=botTagAI])>span[class^=botText] {
+span[class$=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])>span[class$=botText],
+span[class$=headerBotTag]:not(span[class*=botTagAI])>span[class$=botText] {
     display: none !important;
 }
 
-span[class^=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])::after,
-span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
+span[class$=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])::after,
+span[class$=headerBotTag]:not(span[class*=botTagAI])::after {
     content: "BOT";
 }
 
 /* nitpick: move gif icon and favourite button back to the right */
-[class^=imageAccessory] {
+[class$=imageAccessory] {
     left: unset;
     right: 6px;
 }
 
 /* hide annoying/useless stuff */
 [aria-label="Send a gift"],
-[class*=container]:has(> [class^=artContainer]),
-[role=tree]>*>[class^=footer] {
+[class*=container]:has(> [class$=artContainer]),
+[role=tree]>*>[class$=footer] {
     display: none;
 }
 
@@ -57,7 +57,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
     display: none !important;
 }
 
-[class^=searchResultsWrap_] [class^=container_]:has([class^=pageControlContainer_]){
+[class$=searchResultsWrap] [class$=container]:has([class$=pageControlContainer]){
     position: sticky;
     bottom: 0px;
     z-index: 999;
@@ -65,26 +65,26 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
 }
 
 .visual-refresh {
-    div[class^="subtitleContainer_"]:not(:has([class*=transparent])),
-    main[class^="container__"] section[class*="container__"] {
+    div[class$="subtitleContainer"]:not(:has([class*=transparent])),
+    main[class$="chatContent"] section[class*="-container"] {
         position-anchor: --vr-header-trailing;
         width: calc(100% - 88px);
     }
 
-    div[class^="page_"] {
-        &:not(:has(> div[class^="chat_"])) {
+    div[class$="page"] {
+        &:not(:has(> div[class$="chat"])) {
             anchor-name: --vr-header-snippet;
         }
 
-        &>div[class^="chat_"] {
+        &>div[class$="chat"] {
             anchor-name: --vr-header-snippet;
         }
     }
 
-    div[class^="base_"] {
+    div[class$="base"] {
         grid-template-rows: auto;
 
-        &>div[class^="bar_"] {
+        &>div[class*="-bar"] {
             position: absolute;
             position-anchor: --vr-header-snippet;
             top: 0;
@@ -93,7 +93,7 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
             padding: 0;
         }
 
-        & div[class^="trailing_"] {
+        & div[class$="trailing"] {
             anchor-name: --vr-header-trailing;
             background-color: var(--background-base-lower);
             border: none;
@@ -105,11 +105,11 @@ span[class^=headerBotTag]:not(span[class*=botTagAI])::after {
         }
     }
 
-    :not(:has(div[class^="page_"] > div[class^="chat_"])) div[class^="base_"]>div[class^="bar_"] {
+    :not(:has(div[class$="page"] > div[class$="chat"])) div[class$="base"]>div[class$="bar"] {
         right: 0 !important;
     }
 
-    ul[data-list-id="guildsnav"]>div[class^="itemsContainer_"] {
+    ul[data-list-id="guildsnav"]>div[class$="itemsContainer"] {
         margin-top: 16px;
     }
 }
