@@ -29,13 +29,13 @@
 }
 
 /* nitpick: app -> bot, all uppercase */
-span[class$=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])>span[class$=botText],
-span[class$=headerBotTag]:not(span[class*=botTagAI])>span[class$=botText] {
+span[class*=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])>span[class$=botText],
+span[class*=headerBotTag]:not(span[class*=botTagAI])>span[class$=botText] {
     display: none !important;
 }
 
-span[class$=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])::after,
-span[class$=headerBotTag]:not(span[class*=botTagAI])::after {
+span[class*=botTag]:not(span[class*=botTagAI], span[class*=botTagOP], span[class*=botTagRemix])::after,
+span[class*=headerBotTag]:not(span[class*=botTagAI])::after {
     content: "BOT";
 }
 
